@@ -10,41 +10,46 @@
     </head>
     <body>
         <div class="container">
+                    <div class="jumbotron">
+                        <div class="row">
+                            <h1 class="col-xs-12 text-center">Rick and Morty Guessing Game!</h1>
+                        </div>      
+                    </div>
+                
+                <br><br>
+                
+                    <div class="jumbotron">
+
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <p class="text-center">Rules of the Game</p>
+                                <ul>
+                                    <li>You're trying to guess that word ==></li>
+                                    <li>Only get 10 guesses BRO!</li>
+                                    <li>Words only have letters...duh.</li>
+                                    <li>Start hitting them keys.</li>
+                                </ul>
+                            </div>
+                            
+                            <div id="main-game-window" class="col-xs-6">
+                                <p>The game will be played here</p>
+                                <h2 id="word-random">_ _ _ _ _ _ _</h2>
+                            </div>
+                            <div class="col-xs-3">
+                                <p class="text-center" id="letters-guessed">Squanchy Letters:</p>
+                            </div>
+                        </div>
+                    </div>
+                        <br><br>
                 <div class="jumbotron">
                     <div class="row">
-                        <h1 class="col-sm-12 text-center">Rick and Morty Guessing Game!</h1>
-                    </div>      
-                </div>
-                <br><hr><br>
-                
-
-                    <div class="row jumbotron">
-                        <div class="col-xs-3">
-                            <p class="text-center">Rules of the Game</p>
-                            <ul>
-                                <li>You're trying to guess that word ==></li>
-                                <li>Only get 10 guesses BRO!</li>
-                                <li>Words only have letters...duh.</li>
-                                <li>Start hitting them keys.</li>
-                            </ul>
+                        <div class="col-sm-8">
+                            <p id="wins">Times you managed to pull it together: </p>
+                            <p id="losses">Times your brain failed noob: </p>
                         </div>
-                
-                    <div id="main-game-window" class="col-xs-6">
-                        <p>The game will be played here</p>
-                        <h2 id="word-random">_ _ _ _ _ _ _</h2>
-                    </div>
-                    <div class="col-xs-3">
-                        <p class="text-center" id="letters-guessed">Squanchy Letters:</p>
-                    </div>
-                </div>
-                <br><hr><br>
-                <div class="row">
-                    <div class="col-sm-8 jumbotron">
-                        <p id="wins">Times you managed to pull it together: </p>
-                        <p id="losses">Times your brain failed noob: </p>
-                    </div>
-                    <div class="col-sm-4 jumbotron">
-                        <p>Squanchy Img Here!!</p>
+                        <div class="col-sm-4">
+                            <p>Squanchy Img Here!!</p>
+                        </div>
                     </div>
                 </div>
                       
