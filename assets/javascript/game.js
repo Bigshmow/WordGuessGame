@@ -14,8 +14,9 @@ var inprocess = [];
 
 var lastguess = [];
 
+$(document).ready(function() {
 
-function startgame () {
+$("#startgame").on("click" , function() {
     pcword = wordguess[Math.floor(Math.random()*wordguess.length)];
     pcwordnum = pcword.split("");
     blanks = pcwordnum.length;
@@ -28,12 +29,12 @@ function startgame () {
     }
 
     document.getElementById("word-random").innerHTML = inprocess;
+    document.getElementById("wins").innerHTML = "Times you managed to pull it together: " + 0;
+    document.getElementById("losses").innerHTML = "Times your brain failed noob: " + 0;
+    document.getElementById("guesses").innerHTML = "Guesses Left:! " + 10;
 
+    console.log (pcword);
     console.log (inprocess);
 
-}
-
-
-console.log (pcword);
-startgame ();
-
+});
+});
