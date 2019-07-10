@@ -8,8 +8,32 @@ var wordguess = ["rick","morty","beth","squanchy","jerry","wubalubbadubdub","san
 
 var pcword = [""];
 
+var pcwordnum = [];
+
+var inprocess = [];
+
 var lastguess = [];
 
 
+function startgame () {
+    pcword = wordguess[Math.floor(Math.random()*wordguess.length)];
+    pcwordnum = pcword.split("");
+    blanks = pcwordnum.length;
+    guesses = 10;
+    lastguess = [];
+    inprocess = [];
 
+    for (var i=0; i<blanks; i++) {
+        inprocess.push("_");
+    }
+
+    document.getElementById("word-random").innerHTML = inprocess;
+
+    console.log (inprocess);
+
+}
+
+
+console.log (pcword);
+startgame ();
 
