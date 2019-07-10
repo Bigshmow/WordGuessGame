@@ -37,4 +37,13 @@ $("#startgame").on("click" , function() {
     console.log (inprocess);
 
 });
+
+
+
 });
+
+    document.onkeyup = function(event) {
+        var userguess = event.key.toLowerCase();
+        console.log(userguess);
+    }
+
