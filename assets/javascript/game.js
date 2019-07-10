@@ -6,7 +6,7 @@ var blanks = 0;
 
 var wordguess = ["rick","morty","beth","squanchy","jerry","wubalubbadubdub","sanchez","szechuan"];
 
-var pcword = [""];
+var pcword = "";
 
 var pcwordnum = [];
 
@@ -29,21 +29,54 @@ $("#startgame").on("click" , function() {
     }
 
     document.getElementById("word-random").innerHTML = inprocess;
-    document.getElementById("wins").innerHTML = "Times you managed to pull it together: " + 0;
-    document.getElementById("losses").innerHTML = "Times your brain failed noob: " + 0;
-    document.getElementById("guesses").innerHTML = "Guesses Left:! " + 10;
+    document.getElementById("wins").innerHTML = "Times you managed to pull it together: " + wins;
+    document.getElementById("losses").innerHTML = "Times your brain failed noob: " + losses;
+    document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
 
     console.log (pcword);
     console.log (inprocess);
 
 });
 
+function checkletter(letter) {
+    
+    var isletterinword = false;
+    
+    for (var i=0; i<blanks; i++){
+        if(pcword[i] == letter) {
+            isletterinword = true;
+            
+        }
+    }
 
+    if(isletterinword){
+        for (var i=0; i<blanks; i++){
+            if(pcword[i] == letter) {
+                inprocess[i] = letter;
+            }
+        }
+    }
+
+    else {
+        lastguess.push(letter);
+        guesses--;
+        document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
+    }
+
+
+
+};
+document.onkeyup = function(event) {
+    var userguess = event.key.toLowerCase();
+    console.log(userguess);
+    checkletter(userguess);
+}
 
 });
 
-    document.onkeyup = function(event) {
-        var userguess = event.key.toLowerCase();
-        console.log(userguess);
-    }
+
+
+
+
+    
 
