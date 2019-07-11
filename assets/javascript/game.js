@@ -32,6 +32,7 @@ $("#startgame").on("click" , function() {
     document.getElementById("wins").innerHTML = "Times you managed to pull it together: " + wins;
     document.getElementById("losses").innerHTML = "Times your brain failed noob: " + losses;
     document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
+    document.getElementById("letters-guessed").innerHTML = " ";
 
     console.log (pcword);
     console.log (inprocess);
@@ -81,7 +82,7 @@ function checkletter(letter) {
     }
 
     else {
-        lastguess.push(letter);
+        // lastguess.push(letter);
         guesses--;
         document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
         if (guesses < 1) {
@@ -96,6 +97,8 @@ function checkletter(letter) {
 document.onkeyup = function(event) {
     
     var userguess = event.key.toLowerCase();
+    lastguess.push(userguess);
+    document.getElementById("letters-guessed").innerHTML = lastguess;
     console.log(userguess);
     checkletter(userguess);
     console.log(inprocess);
