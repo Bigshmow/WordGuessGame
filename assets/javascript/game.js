@@ -62,7 +62,9 @@ function checkletter(letter) {
         guesses--;
         document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
     }
+    console.log(inprocess);
 
+    // unhide letters dont repopulate -- Adam
 
 
 };
