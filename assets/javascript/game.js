@@ -28,7 +28,7 @@ $("#startgame").on("click" , function() {
         inprocess.push("_");
     }
 
-    document.getElementById("word-random").innerHTML = inprocess;
+    document.getElementById("word-random").innerHTML = inprocess.join(" ");
     document.getElementById("wins").innerHTML = "Times you managed to pull it together: " + wins;
     document.getElementById("losses").innerHTML = "Times your brain failed noob: " + losses;
     document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
@@ -37,6 +37,19 @@ $("#startgame").on("click" , function() {
     console.log (inprocess);
 
 });
+
+function resetwin(){
+    wins++;
+    document.getElementById("wins").innerHTML = "Times you managed to pull it together: " + wins;
+    alert("You Win!");
+    
+};
+
+function resetloss(){
+    losses++;
+    document.getElementById("losses").innerHTML = "Times your brain failed noob: " + losses;
+    alert("You Lose!!");
+};
 
 function checkletter(letter) {
     
@@ -53,7 +66,13 @@ function checkletter(letter) {
         for (var i=0; i<blanks; i++){
             if(pcword[i] == letter) {
                 inprocess[i] = letter;
+                document.getElementById("word-random").innerHTML = inprocess.join(" ");
+                if (pcwordnum.toString() == (inprocess.toString()) ){
+                    resetwin();
+                }
             }
+            
+            
         }
     }
 
@@ -61,17 +80,23 @@ function checkletter(letter) {
         lastguess.push(letter);
         guesses--;
         document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
+        if (guesses < 1) {
+            resetloss();
+        }
     }
-    console.log(inprocess);
 
     // unhide letters dont repopulate -- Adam
 
-
 };
+    
 document.onkeyup = function(event) {
+    
     var userguess = event.key.toLowerCase();
     console.log(userguess);
     checkletter(userguess);
+    console.log(inprocess);
+    
+    
 }
 
 });
