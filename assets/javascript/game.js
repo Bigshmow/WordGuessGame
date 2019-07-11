@@ -40,15 +40,19 @@ $("#startgame").on("click" , function() {
 
 function resetwin(){
     wins++;
+    guesses = 10;
+    document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
     document.getElementById("wins").innerHTML = "Times you managed to pull it together: " + wins;
-    alert("You Win!");
+    alert("You Win! Tap Squanchy to guess again");
     
 };
 
 function resetloss(){
     losses++;
+    guesses = 10;
+    document.getElementById("guesses").innerHTML = "Guesses Left: " + guesses;
     document.getElementById("losses").innerHTML = "Times your brain failed noob: " + losses;
-    alert("You Lose!!");
+    alert("You Lose!! Tap Squanchy to try again.");
 };
 
 function checkletter(letter) {
